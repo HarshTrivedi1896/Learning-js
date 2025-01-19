@@ -47,9 +47,21 @@ const y = (Math.random() * (Math.round(max) - Math.round(min) + 1)) // + (min - 
 
 // TRYING AGAIN 
 
-const max = 4.7;
-const min = 4.1;
+function getRandomInRange(min, max) {
+    return Math.random() * (max - min) + min; // Scale and shift
+}
 
-const x = new Number((Math.random * 10) + 1) 
-//if x > 0
-console.log(x);
+function printRandomNumbersInRange(count) {
+    const min = 4.1;
+    const max = 4.7;
+
+    for (let i = 0; i < count; i++) {
+        const randomNumber = getRandomInRange(min, max);
+        if (randomNumber >= min && randomNumber <= max) {
+            console.log(randomNumber.toFixed(2)); 
+        }
+    }
+}
+
+
+printRandomNumbersInRange(20);
